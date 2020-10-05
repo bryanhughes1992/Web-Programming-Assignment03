@@ -47,14 +47,15 @@ while (!gandalf) {
                 //create a variable equal to the book found
                 var position = book;
                 //tell the user the book they selected
-                alert(`The number ${userInput} most influential book to humanity is ${position}`);
+                alert(`The number ${userInput} most influential book to humanity is "${position}"`);
+                console.log(`Book${userInput} - "${position}"`);
             }
         });
         //set gandalf to userInput, you shall now pass
         gandalf = userInput;
     //ELSE IF userInput isn't a number, or less than 1 or greater than 10
     } else if (isNaN(userInput) || userInput < 1 || userInput > 10 || userInput === "Pick a number: 1-10") {
-        //Tell user to re-enter a proper number
+        //THEN Tell user to re-enter a proper number
         alert("Please enter a number between 1 and 10!");
     }
 }
