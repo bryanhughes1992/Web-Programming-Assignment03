@@ -33,18 +33,26 @@ var bookArray = [
 ];
 //INITIALIZING 'gandalf' TO NULL
 var gandalf = null;
-//WHILE gandalf IS NULL - YOU SHALL NOT PASS!
+//While 'gandalf' is equal to null, YOU SHALL NOT PASS!
 while (!gandalf) {
-    //PROMPT USER TO ENTER NUMBER BETWEEN 1 AND 10
-    //PARSE THEIR INPUT TO AND INTEGER
+    //Prompt the user to enter a number between 1 and 10
+    //Parse the user's input to an int
     var userInput = parseInt(prompt("Which top 10 book would you like?", "Pick a number: 1-10"));
-    /*IF USER INPUT IS BETWEEN 1 AND 10
-        - SET GANDALF TO USER INPUT TO END LOOP
-        - SEND A MESSAGE TO THE USER
-    */
+    //IF userInput is between 1 and 10
     if (userInput >= 1 && userInput <= 10) {
-        alert(userInput);
+        //Loop through the array of books
+        bookArray.forEach(book => {
+            //IF userInput - 1 is equal to the index of 'book' in 'bookArray'
+            if (userInput - 1 === bookArray.indexOf(book)) {
+                //create a variable equal to the book found
+                var position = book;
+                //tell the user the book they selected
+                alert(`Number ${userInput} on the list is ${position}`);
+            }
+        });
+        //set gandalf to userInput, you shall pass
         gandalf = userInput;
+    //ELSE IF userInput isn't a number, or less than 1 or greater than 10
     } else if (isNaN(userInput) || userInput < 1 || userInput > 10 || userInput === "Pick a number: 1-10") {
         alert("Please enter a number between 1 and 10!");
     }
