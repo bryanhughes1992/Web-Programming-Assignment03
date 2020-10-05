@@ -55,7 +55,7 @@ while (!gandalf) {
         });
         //set gandalf's value to userInput's value, YOU SHALL NOW PASS!
         gandalf = userInput;
-    //ELSE IF userInput isn't a number, or less than 1 or greater than 10
+    //ELSE IF userInput isn't a number, or less than 1 or greater than 10 or input isNaN
     } else if (isNaN(userInput) || userInput < 1 || userInput > 10 || userInput === "Pick a number: 1-10") {
         //THEN Tell user to re-enter a proper number
         alert("Please enter a number between 1 and 10!");
