@@ -39,19 +39,19 @@ var gandalf = null;
 while (!gandalf) {
     //Prompt user to input number between 1 and 10 / Parse inputted value to an int
     var userInput = parseInt(prompt("Which top 10 book would you like?", "Pick a number: 1-10"));
-    //IF userInput is between 1 and 10
+    //if userInput is between 1 and 10 - loop through the array of books
     if (userInput >= 1 && userInput <= 10) {
         //Loop through the array of books
         bookArray.forEach(book => {
-            //IF the userInput minus 1 is equal to the index of 'book' in 'bookArray'
+            //if userInput minus 1 is equal to the index of 'book' in 'bookArray'
             if (userInput - 1 === bookArray.indexOf(book)) {
                 //create a variable equal to the book found in the bookArray
-                var position = book;
+                var userSelectedBook = book;
                 //tell the user the book they selected
-                alert(`The number ${userInput} most influential book to humanity is "${position}"`);
+                alert(`The number ${userInput} most influential book to humanity is "${userSelectedBook}"`);
             }
             //Log the index plus 1 of each book, plus the title of each book to the console
-            console.log(`Book ${bookArray.indexOf(book) + 1} - ${book}`);
+            console.log(`Book ${bookArray.indexOf(book) + 1} - "${book}"`);
         });
         //set gandalf's value to userInput's value, YOU SHALL NOW PASS!
         gandalf = userInput;
