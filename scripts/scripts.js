@@ -38,11 +38,14 @@ while (!gandalf) {
     //PROMPT USER TO ENTER NUMBER BETWEEN 1 AND 10
     //PARSE THEIR INPUT TO AND INTEGER
     var userInput = parseInt(prompt("Which top 10 book would you like?", "Pick a number: 1-10"));
-    //IF USER INPUT IS BETWEEN 1 AND 10
-    //SET GANDALF TO USER INPUT TO END LOOP
+    /*IF USER INPUT IS BETWEEN 1 AND 10
+        - SET GANDALF TO USER INPUT TO END LOOP
+        - SEND A MESSAGE TO THE USER
+    */
     if (userInput >= 1 && userInput <= 10) {
         alert(userInput);
         gandalf = userInput;
+    } else if (isNaN(userInput) || userInput < 1 || userInput > 10 || userInput === "Pick a number: 1-10") {
+        alert("Please enter a number between 1 and 10!");
     }
-
 }
